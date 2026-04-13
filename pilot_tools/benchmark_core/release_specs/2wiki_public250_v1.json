@@ -1,0 +1,33 @@
+{
+  "release_name": "2wiki_public250_v1",
+  "dataset_group": "2wiki",
+  "manifest_path": "benchmark_package/fixed_splits/public_2wiki_250_seed42.json",
+  "manifest_name": "public_2wiki_250_balanced_seed42",
+  "manifest_selection_sha256": "6f72d8e39cae8418a548",
+  "wiki2_path": "member_runtime/2wikimultihopqa_dev_indexed.jsonl",
+  "frozen_output_jsonl": "member_runtime/poison_docs_2wiki.frozen_qc.jsonl",
+  "qc_report_json": "member_runtime/poison_docs_2wiki.qc_report.json",
+  "tau_lex": 0.99,
+  "tau_lex_note": "2WikiMultiHopQA uses rule-based template sybil generation. Template-derived docs share near-identical structure (mean pairwise Jaccard≈0.97), so τ_lex=0.99 is required to allow any groups to pass. This is a dataset-specific threshold choice, not a hyperparameter change. Reported separately in Appendix D.",
+  "total_manifest_questions": 250,
+  "poison_groups_kept": 249,
+  "poison_groups_dropped": 1,
+  "verifier_model_id": "Qwen2.5-72B-Instruct",
+  "verifier_backend": "llama_cpp_http",
+  "verifier_base_url": "http://127.0.0.1:8003",
+  "verifier_decision_rule": "supports_t_and_not_g",
+  "frozen_format": {
+    "ds": "wiki2",
+    "id": "dev_N (positional index aligned to 2WikiMultiHopQA validation split)",
+    "gold_answers": "list of gold answer strings",
+    "poison_targets": "list of target answer strings",
+    "poison_docs": "list of sybil passage texts (up to 6 per question)"
+  },
+  "forced_exposure": {
+    "wiki2_gold_positions": [0],
+    "forced_k": 4
+  },
+  "index": {
+    "base_index": "wiki_indexes/wikipedia-dpr-100w"
+  }
+}

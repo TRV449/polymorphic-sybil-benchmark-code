@@ -1,0 +1,7 @@
+tqdm
+pyserini
+sentence-transformers
+transformers
+torch
+numpy
+requests

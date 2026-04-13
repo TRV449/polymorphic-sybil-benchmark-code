@@ -1,0 +1,39 @@
+{
+  "release_name": "nq_hotpot_public500_v1",
+  "dataset_group": "nq_hotpot",
+  "manifest_path": "benchmark_package/fixed_splits/public_all_500_balanced_seed42.json",
+  "manifest_name": "public_all_500_balanced_seed42",
+  "manifest_selection_sha256": "e64e519ebab9cc5d5671a7b5b26e4c6f0e64e91a3d6e88d6b5d44c56f3a2b7e9",
+  "hotpot_path": "datasets/hotpotqa_fixed.jsonl",
+  "nq_path": "datasets/nq_fixed.jsonl",
+  "frozen_output_jsonl": "member_runtime/poison_docs_llm.frozen_qc.jsonl",
+  "qc_report_json": "member_runtime/poison_docs_llm.qc_report.json",
+  "audit_csv": "member_runtime/poison_docs_llm.verifier_audit_150.csv",
+  "tau_lex": 0.8,
+  "appendix_tau_lex": [0.5, 0.6, 0.8],
+  "total_manifest_questions": 500,
+  "poison_groups_kept": 389,
+  "poison_groups_dropped": 111,
+  "note_on_dropped": "Questions where no QC-passing poison group exists are evaluated without poison (base-only). Dropped count is reported in Table 1 footnote.",
+  "verifier_model_id": "Qwen2.5-72B-Instruct",
+  "verifier_backend": "llama_cpp_http",
+  "verifier_base_url": "http://127.0.0.1:8003",
+  "verifier_decision_rule": "supports_t_and_not_g",
+  "tau_lex_note": "NQ+Hotpot uses τ_lex=0.8. LLM-generated sybil docs achieve sufficient lexical diversity at this threshold (mean pairwise Jaccard=0.49). τ_lex ablation over {0.5, 0.6, 0.8} reported in Appendix D.",
+  "frozen_format": {
+    "ds": "dataset label: nq | hotpot",
+    "id": "question id (str)",
+    "gold_answers": "list of gold answer strings",
+    "poison_targets": "list of target answer strings (one per sybil doc, all identical per group)",
+    "poison_docs": "list of sybil passage texts (up to 6 per question)"
+  },
+  "forced_exposure": {
+    "nq_gold_positions": [0],
+    "hotpot_gold_positions": [0, 2],
+    "forced_k": 4
+  },
+  "index": {
+    "base_index": "wiki_indexes/wikipedia-dpr-100w",
+    "attack_index": "wiki_indexes/wikipedia-dpr-100w_attack"
+  }
+}

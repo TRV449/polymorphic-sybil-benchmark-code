@@ -1,0 +1,1029 @@
+{
+  "manifest_version": "1.2",
+  "name": "wiki2_dev_250_seed42",
+  "split": "dev",
+  "created_at_utc": "2026-04-10T07:42:43.123603+00:00",
+  "selection_policy": {
+    "dataset": "wiki2",
+    "ordering": "stable_hash",
+    "balanced": false,
+    "max_questions": 250,
+    "seed": 42
+  },
+  "seed": 42,
+  "dataset": "wiki2",
+  "question_count": 250,
+  "questions_by_dataset": {
+    "wiki2": 250
+  },
+  "selection_sha256": "3f38fa22d5e2b5e856288ac87134d00483b0ca5dc958bd49285e71a6c7d35e86",
+  "source_datasets": {
+    "wiki2": {
+      "path": "member_runtime/datasets/2wikimultihopqa/dev.jsonl",
+      "sha256": "b4d74d73d1cb3c0632c665a85e1e5060e3411968b807721618cfd2464fc905e3",
+      "question_count": 12576
+    }
+  },
+  "questions": [
+    {
+      "ds": "wiki2",
+      "id": "dev_10879"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_7142"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_105"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_11630"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_6682"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_3022"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_9955"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_1848"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_4541"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_7100"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_5846"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_5509"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_7672"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_5507"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_11224"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_3623"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_9301"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_826"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_10450"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_7254"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_7231"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_9015"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_4770"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_6106"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_7439"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_4861"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_1739"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_5021"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_2969"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_4952"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_10840"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_3103"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_9016"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_9296"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_9949"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_10353"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_1023"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_19"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_9137"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_11056"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_525"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_3118"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_6392"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_7260"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_9813"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_11611"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_10361"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_12450"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_12044"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_11156"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_8154"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_8775"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_5841"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_11236"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_11522"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_6597"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_9492"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_8688"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_11256"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_5579"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_6745"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_7202"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_8416"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_401"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_3482"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_3138"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_10320"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_40"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_12485"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_12282"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_11857"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_7368"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_5767"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_665"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_190"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_2791"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_11311"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_7263"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_82"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_2255"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_8091"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_8953"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_7550"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_6426"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_1471"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_34"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_8973"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_10476"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_7774"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_7659"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_9089"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_8493"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_9065"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_10610"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_12353"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_9140"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_6553"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_10887"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_8063"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_2217"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_2270"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_3052"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_9420"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_7763"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_10104"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_2729"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_6313"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_11738"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_8046"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_4338"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_5173"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_8090"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_5133"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_6751"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_5226"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_4103"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_7040"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_114"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_2623"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_7929"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_565"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_8214"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_3250"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_1805"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_11518"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_3099"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_1248"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_11637"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_8758"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_6888"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_8061"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_4404"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_3669"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_6731"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_6328"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_1973"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_11919"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_29"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_1233"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_7062"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_4159"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_11547"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_9759"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_3221"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_1983"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_10716"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_9025"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_3856"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_5701"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_4420"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_6346"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_10674"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_4192"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_3368"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_1234"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_11862"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_9142"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_9902"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_5263"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_1492"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_7242"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_8760"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_3216"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_382"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_5977"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_6188"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_9275"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_2891"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_7685"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_1688"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_874"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_10501"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_6531"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_3429"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_9512"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_1748"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_5406"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_5683"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_7212"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_9566"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_5109"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_8048"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_10538"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_10621"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_10940"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_8189"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_9231"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_5525"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_10334"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_11373"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_11885"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_3227"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_10837"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_567"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_10087"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_1479"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_1350"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_7495"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_2543"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_11600"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_2187"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_9382"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_9679"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_2371"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_7796"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_5772"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_9338"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_12536"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_7844"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_8226"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_7165"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_11315"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_2533"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_142"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_2086"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_5971"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_11810"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_10490"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_5085"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_1259"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_8005"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_3135"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_439"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_85"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_8131"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_307"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_5696"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_2469"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_8921"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_12024"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_7381"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_5642"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_2290"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_3179"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_5327"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_7028"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_11415"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_7141"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_10509"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_10632"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_3870"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_8443"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_5545"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_5660"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_5945"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_256"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_5316"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_6737"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_2708"
+    },
+    {
+      "ds": "wiki2",
+      "id": "dev_3598"
+    }
+  ]
+}

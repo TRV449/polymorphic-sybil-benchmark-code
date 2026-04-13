@@ -1,0 +1,36 @@
+NOTICE — Source Dataset Attribution
+
+This benchmark incorporates data derived from the following sources:
+
+1. Natural Questions (NQ)
+   Authors: Tom Kwiatkowski et al.
+   License: CC BY-SA 3.0
+   URL: https://ai.google.com/research/NaturalQuestions
+
+2. HotpotQA
+   Authors: Zhilin Yang et al.
+   License: CC BY-SA 4.0
+   URL: https://hotpotqa.github.io/
+
+3. Wikipedia (English)
+   License: CC BY-SA 3.0
+   Used via the DPR Wikipedia passage corpus (wikipedia-dpr-100w).
+
+4. ColBERTv2
+   Authors: Santhanam et al.
+   License: MIT
+   Checkpoint: colbert-ir/colbertv2.0
+
+5. Multilingual E5-Large
+   Authors: Wang et al.
+   License: MIT
+   Model: intfloat/multilingual-e5-large
+
+6. Cross-Encoder ms-marco-MiniLM-L6-v2
+   Authors: Reimers & Gurevych
+   License: Apache 2.0
+   Model: cross-encoder/ms-marco-MiniLM-L6-v2
+
+All derived benchmark artifacts (sybil documents, manifests, evaluation
+splits) are released under CC BY-SA 4.0, consistent with the most
+restrictive source license.

@@ -1,0 +1,80 @@
+# =============================================================================
+# RAG Poisoning Benchmark — .gitignore
+# =============================================================================
+
+# ── Non-benchmark projects (root-owned) ─────────────────────────────────────
+siyeoncode/
+models/
+GMTP/
+Mask_DOC/
+llama-3.1/
+llama.cpp/
+
+# ── Non-benchmark staging area ──────────────────────────────────────────────
+_non_benchmark/
+
+# ── Model weights & large binaries ──────────────────────────────────────────
+gpt-oss-120b-GGUF/
+*.gguf
+*.bin
+*.safetensors
+*.pt
+*.pth
+*.tar.gz
+
+# ── Indexes (reproducible, too large for git) ───────────────────────────────
+wiki_indexes/
+faiss_index_wikipedia_dpr_100w/
+
+# ── Runtime directory (experiment outputs, server binaries, model weights) ──
+member_runtime/
+
+# ── Python / build artifacts ────────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+*.so
+
+# ── Virtual environments ────────────────────────────────────────────────────
+.venv*/
+venv/
+
+# ── System / IDE / cache ───────────────────────────────────────────────────
+.cache/
+.Trash-0/
+.ipynb_checkpoints/
+.DS_Store
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# ── Logs & temp ─────────────────────────────────────────────────────────────
+*.log
+
+# ── pilot_tools: caches & legacy (read-only, not paper code) ────────────────
+pilot_tools/llm_cache/
+pilot_tools/_indexes/
+pilot_tools/_pyserini_input/
+pilot_tools/grid_search_runs/
+pilot_tools/paper_results/
+pilot_tools/fair_v1_logs_*/
+pilot_tools/_not_used/
+pilot_tools/__pycache__/
+
+# ── datasets: custom benchmarks (not used in paper) ────────────────────────
+datasets/custom_benchmark*
+datasets/.ipynb_checkpoints/
+
+# ── Benchmarking/ symlinks to runtime ────────────────────────────────────────
+Benchmarking/results
+
+# ── Secrets ─────────────────────────────────────────────────────────────────
+.env
+*.key
+*.pem
+credentials*

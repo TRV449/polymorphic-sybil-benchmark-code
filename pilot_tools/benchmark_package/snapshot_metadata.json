@@ -1,0 +1,51 @@
+{
+  "benchmark_name": "grounded_qa_poisoning_benchmark",
+  "corpus": {
+    "base_lucene_index": "wiki_indexes/wikipedia-dpr-100w",
+    "attack_lucene_index": "wiki_indexes/wikipedia-dpr-100w_attack",
+    "faiss_index_dir": "faiss_index_wikipedia_dpr_100w",
+    "wikipedia_snapshot_note": "Fill in the exact upstream Wikipedia snapshot or preprocessing provenance before release."
+  },
+  "datasets": {
+    "hotpot": "datasets/hotpotqa_fixed.jsonl",
+    "nq": "datasets/nq_fixed.jsonl"
+  },
+  "poison_assets": {
+    "poison_jsonl": "pilot_tools/poison_docs_llm.jsonl",
+    "protocol": "polymorphic_sybil_closed_set"
+  },
+  "fixed_splits": {
+    "public_all_500_balanced": "pilot_tools/benchmark_package/fixed_splits/public_all_500_balanced_seed42.json",
+    "dev_all_500_balanced": "pilot_tools/benchmark_package/fixed_splits/dev_all_500_balanced_seed42.json",
+    "test_all_500_balanced": "pilot_tools/benchmark_package/fixed_splits/test_all_500_balanced_seed42.json",
+    "public_hotpot_500": "pilot_tools/benchmark_package/fixed_splits/public_hotpot_500_seed42.json",
+    "public_nq_500": "pilot_tools/benchmark_package/fixed_splits/public_nq_500_seed42.json"
+  },
+  "benchmark_tracks": {
+    "clean_strong": {
+      "runner": "pilot_tools/run_base_only.sh",
+      "purpose": "dataset-aware clean ceiling baseline"
+    },
+    "attack_defense_fairness": {
+      "runner": "pilot_tools/run_v24.sh",
+      "purpose": "shared-reader attack/defense comparison track"
+    },
+    "oracle_control": {
+      "runner": "pilot_tools/fullwiki_eval_oracle_controls.py",
+      "purpose": "parametric-only and pseudo-oracle answer-match control track"
+    }
+  },
+  "evaluation": {
+    "official_evaluator": "pilot_tools/official_eval.py",
+    "selective_behavior_analyzer": "pilot_tools/analyze_selective_behavior.py",
+    "answer_postprocess": "extract_first_answer",
+    "match_function": "check_em",
+    "report_metrics": [
+      "ACC",
+      "ASR",
+      "CACC",
+      "abstain_rate",
+      "third_answer_drift"
+    ]
+  }
+}
