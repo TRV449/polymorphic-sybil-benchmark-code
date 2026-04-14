@@ -308,7 +308,13 @@ def main() -> None:
     parser.add_argument("--release_spec", type=str, default="",
                         help="Path to release spec JSON (optional). Contents are embedded in qc_report for provenance.")
     parser.add_argument("--audit_csv", default="")
+    parser.add_argument("--incremental_output", action="store_true",
+                        help="Append kept rows + per-group report rows immediately; enables resume.")
+    parser.add_argument("--resume", action="store_true",
+                        help="Skip (ds,id) pairs already present in incremental output sidecar. Requires --incremental_output.")
     args = parser.parse_args()
+    if args.resume and not args.incremental_output:
+        raise SystemExit("[!] --resume requires --incremental_output")
 
     if not (args.hotpot or args.nq or args.wiki2_gold):
         raise SystemExit("[!] Provide at least one of --hotpot, --nq, --wiki2_gold for gold lookup.")
@@ -336,6 +342,27 @@ def main() -> None:
         )
     print("[*] verifier OK; starting per-group QC (semantic + passage checks; log may be quiet between lines)", flush=True)
 
+    # Incremental output sidecars (enabled by --incremental_output).
+    # report_ndjson: one JSON object per group (all fields of report_rows[i]) for resume tracking.
+    # output_jsonl is opened in append mode when incremental; kept rows are written per-group.
+    report_ndjson_path = Path(args.report_json).with_suffix(".ndjson") if args.incremental_output else None
+    processed_keys: set[tuple[str, str]] = set()
+    if args.resume and report_ndjson_path and report_ndjson_path.is_file():
+        with report_ndjson_path.open("r", encoding="utf-8") as rf:
+            for line in rf:
+                try:
+                    r = json.loads(line)
+                    processed_keys.add((r["ds"], str(r["id"])))
+                except Exception:
+                    continue
+        print(f"[*] resume: found {len(processed_keys)} already-processed keys in {report_ndjson_path}", flush=True)
+    out_f = None
+    ndjson_f = None
+    if args.incremental_output:
+        Path(args.output_jsonl).parent.mkdir(parents=True, exist_ok=True)
+        out_f = Path(args.output_jsonl).open("a", encoding="utf-8")
+        ndjson_f = report_ndjson_path.open("a", encoding="utf-8")
+
     kept = []
     report_rows = []
     dropped = 0
@@ -343,6 +370,8 @@ def main() -> None:
     for gi, ((ds, qid), entry) in enumerate(poison_groups.items(), start=1):
         if gi == 1 or gi % 10 == 0 or gi == len(poison_groups):
             print(f"[*] QC progress: {gi}/{len(poison_groups)} ({ds} {qid})", flush=True)
+        if args.resume and (ds, str(qid)) in processed_keys:
+            continue
         golds = gold_lookup.get((ds, qid), [])
         targets = entry.get("targets", [])
         docs = entry.get("docs", [])
@@ -388,36 +417,45 @@ def main() -> None:
             )
         else:
             dropped += 1
-        report_rows.append(
-            {
-                "ds": ds,
-                "id": qid,
-                "gold_answers": golds,
-                "poison_targets": targets,
-                "doc_count": len(docs),
-                "target_disjoint_ok": disjoint_ok,
-                "target_disjoint_string_ok": string_disjoint_ok,
-                "target_disjoint_semantic_ok": semantic_disjoint["passed"],
-                "target_same_entity_or_equivalent": semantic_disjoint["same_entity_or_equivalent"],
-                "target_factual_contradiction_ok": semantic_disjoint["factual_contradiction"],
-                "target_disjoint_label": semantic_disjoint["label"],
-                "pairwise_jaccard_ok": lexical_ok,
-                "max_pairwise_jaccard": max(pair_scores) if pair_scores else 0.0,
-                "mean_pairwise_jaccard": (sum(pair_scores) / len(pair_scores)) if pair_scores else 0.0,
-                "verifier_passed": verifier_ok,
-                "verifier_labels": [result["label"] for result in verifier_results],
-                "verifier_supports_target_all": all(result["supports_target"] for result in verifier_results) if verifier_results else False,
-                "verifier_supports_gold_any": any(result["supports_gold"] for result in verifier_results) if verifier_results else False,
-                "claim_level_verifier_status": verifier_status,
-                "passed": passed,
-            }
-        )
+        row_report = {
+            "ds": ds,
+            "id": qid,
+            "gold_answers": golds,
+            "poison_targets": targets,
+            "doc_count": len(docs),
+            "target_disjoint_ok": disjoint_ok,
+            "target_disjoint_string_ok": string_disjoint_ok,
+            "target_disjoint_semantic_ok": semantic_disjoint["passed"],
+            "target_same_entity_or_equivalent": semantic_disjoint["same_entity_or_equivalent"],
+            "target_factual_contradiction_ok": semantic_disjoint["factual_contradiction"],
+            "target_disjoint_label": semantic_disjoint["label"],
+            "pairwise_jaccard_ok": lexical_ok,
+            "max_pairwise_jaccard": max(pair_scores) if pair_scores else 0.0,
+            "mean_pairwise_jaccard": (sum(pair_scores) / len(pair_scores)) if pair_scores else 0.0,
+            "verifier_passed": verifier_ok,
+            "verifier_labels": [result["label"] for result in verifier_results],
+            "verifier_supports_target_all": all(result["supports_target"] for result in verifier_results) if verifier_results else False,
+            "verifier_supports_gold_any": any(result["supports_gold"] for result in verifier_results) if verifier_results else False,
+            "claim_level_verifier_status": verifier_status,
+            "passed": passed,
+        }
+        report_rows.append(row_report)
+        if args.incremental_output:
+            if passed:
+                out_f.write(json.dumps(kept[-1], ensure_ascii=False) + "\n")
+                out_f.flush()
+            ndjson_f.write(json.dumps(row_report, ensure_ascii=False) + "\n")
+            ndjson_f.flush()
 
-    output_jsonl = Path(args.output_jsonl)
-    output_jsonl.parent.mkdir(parents=True, exist_ok=True)
-    with output_jsonl.open("w", encoding="utf-8") as f:
-        for row in kept:
-            f.write(json.dumps(row, ensure_ascii=False) + "\n")
+    if args.incremental_output:
+        out_f.close()
+        ndjson_f.close()
+    else:
+        output_jsonl = Path(args.output_jsonl)
+        output_jsonl.parent.mkdir(parents=True, exist_ok=True)
+        with output_jsonl.open("w", encoding="utf-8") as f:
+            for row in kept:
+                f.write(json.dumps(row, ensure_ascii=False) + "\n")
 
     release_spec_data = {}
     if args.release_spec and Path(args.release_spec).is_file():
