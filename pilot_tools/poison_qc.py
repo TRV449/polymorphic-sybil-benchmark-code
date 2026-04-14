@@ -17,9 +17,10 @@ def load_questions(
     hotpot_path: str,
     nq_path: str,
     wiki2_gold_path: str = "",
+    trivia_path: str = "",
 ) -> dict[tuple[str, str], list[str]]:
     lookup: dict[tuple[str, str], list[str]] = {}
-    for ds, path in (("hotpot", hotpot_path), ("nq", nq_path)):
+    for ds, path in (("hotpot", hotpot_path), ("nq", nq_path), ("trivia", trivia_path)):
         if not path or not Path(path).is_file():
             continue
         with open(path, "r", encoding="utf-8") as f:
@@ -296,6 +297,7 @@ def main() -> None:
     parser.add_argument("--hotpot", default="")
     parser.add_argument("--nq", default="")
     parser.add_argument("--wiki2_gold", default="", help="2Wiki JSONL with golden_answers")
+    parser.add_argument("--trivia", default="", help="TriviaQA JSONL with {id, answer} — Option B' support")
     parser.add_argument("--poison_jsonl", required=True)
     parser.add_argument("--output_jsonl", required=True)
     parser.add_argument("--report_json", required=True)
@@ -316,10 +318,10 @@ def main() -> None:
     if args.resume and not args.incremental_output:
         raise SystemExit("[!] --resume requires --incremental_output")
 
-    if not (args.hotpot or args.nq or args.wiki2_gold):
-        raise SystemExit("[!] Provide at least one of --hotpot, --nq, --wiki2_gold for gold lookup.")
+    if not (args.hotpot or args.nq or args.wiki2_gold or args.trivia):
+        raise SystemExit("[!] Provide at least one of --hotpot, --nq, --wiki2_gold, --trivia for gold lookup.")
 
-    gold_lookup = load_questions(args.hotpot, args.nq, args.wiki2_gold)
+    gold_lookup = load_questions(args.hotpot, args.nq, args.wiki2_gold, args.trivia)
     allowed_keys = load_manifest_keys(args.question_manifest)
     if allowed_keys is not None:
         print(f"[*] manifest filter: {len(allowed_keys)} questions")
