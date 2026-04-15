@@ -159,6 +159,23 @@ def load_nq(path: Path) -> List[Tuple[str, str, List[str]]]:
     return out
 
 
+def load_trivia(path: Path) -> List[Tuple[str, str, List[str]]]:
+    """
+    TriviaQA JSONL (unfiltered.nocontext format after convert_triviaqa.py):
+      {id: "trivia_N", question: str, answer: [alias_list]}.
+    meta.dataset is written as "trivia" in poison rows.
+    """
+    out: List[Tuple[str, str, List[str]]] = []
+    for item in _read_jsonl(path):
+        qid, q, ans = str(item.get("id", "")), item.get("question"), item.get("answer")
+        if not (qid and q and ans):
+            continue
+        golds = [str(x) for x in ans if str(x).strip()] if isinstance(ans, list) else [str(ans)]
+        if golds:
+            out.append((qid, str(q), golds))
+    return out
+
+
 def load_wiki2(path: Path) -> List[Tuple[str, str, List[str]]]:
     """
     2WikiMultiHopQA-style JSONL (e.g. FlashRAG dev.jsonl): id, question, golden_answers[].
@@ -304,6 +321,12 @@ def main() -> None:
         default=None,
         help="2WikiMultiHopQA JSONL (id, question, golden_answers[]) e.g. FlashRAG dev.jsonl",
     )
+    ap.add_argument(
+        "--trivia",
+        type=Path,
+        default=None,
+        help="TriviaQA JSONL (id, question, answer[alias_list]) from convert_triviaqa.py",
+    )
     ap.add_argument("--out_jsonl", required=True, type=Path)
     ap.add_argument("--seed", type=int, default=7)
     ap.add_argument("--k_poison", type=int, default=6)
@@ -320,8 +343,8 @@ def main() -> None:
                     help="Cache directory for LLM paraphrases")
     args = ap.parse_args()
 
-    if not args.hotpot and not args.nq and not args.wiki2:
-        raise SystemExit("[!] Provide at least one of --hotpot, --nq, --wiki2")
+    if not args.hotpot and not args.nq and not args.wiki2 and not args.trivia:
+        raise SystemExit("[!] Provide at least one of --hotpot, --nq, --wiki2, --trivia")
 
     searcher = LuceneSearcher(str(args.index_dir))
     searcher.set_language("en")
@@ -329,9 +352,10 @@ def main() -> None:
     hotpot = load_hotpot(args.hotpot) if args.hotpot else []
     nq = load_nq(args.nq) if args.nq else []
     wiki2 = load_wiki2(args.wiki2) if args.wiki2 else []
+    trivia = load_trivia(args.trivia) if args.trivia else []
     answer_pool = list(
         set(
-            [str(g) for _, _, golds in (hotpot + nq + wiki2) for g in golds if str(g).strip()]
+            [str(g) for _, _, golds in (hotpot + nq + wiki2 + trivia) for g in golds if str(g).strip()]
         )
     )
 
@@ -481,6 +505,8 @@ def main() -> None:
         process("nq", nq)
     if wiki2:
         process("wiki2", wiki2)
+    if trivia:
+        process("trivia", trivia)
 
     print(f"[OK] wrote {out_rows_count} poison docs to {args.out_jsonl}")
     if total_hits > 0: print(f"[STATS] missing_raw_hits: {missing_raw} / {total_hits}")
