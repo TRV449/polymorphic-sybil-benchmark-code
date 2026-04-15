@@ -84,6 +84,27 @@ def _extract_json_text(data) -> str:
     return str(data).strip()
 
 
+_OPENAI_SNAPSHOT_LOG = os.environ.get(
+    "OPENAI_SNAPSHOT_LOG",
+    "/mnt/data/2020112002/member_runtime/openai_model_snapshots.jsonl",
+)
+_OPENAI_SNAPSHOT_SEEN: set = set()
+
+def _record_openai_snapshot(requested: str, observed: Optional[str]) -> None:
+    """Append (requested → observed) once per process for OpenAI model resolution audit.
+    Provides §8 Limitations evidence that alias gpt-4o-mini resolved to a specific snapshot."""
+    if not observed or (requested, observed) in _OPENAI_SNAPSHOT_SEEN:
+        return
+    _OPENAI_SNAPSHOT_SEEN.add((requested, observed))
+    try:
+        import json, time
+        with open(_OPENAI_SNAPSHOT_LOG, "a", encoding="utf-8") as fh:
+            fh.write(json.dumps({"ts": time.time(), "requested": requested,
+                                 "observed": observed, "pid": os.getpid()}) + "\n")
+    except Exception:
+        pass
+
+
 def _post_json(url: str, payload: dict, timeout: int, headers: Optional[dict] = None) -> str:
     response = requests.post(url, json=payload, timeout=timeout, headers=headers or {})
     response.raise_for_status()
@@ -158,6 +179,7 @@ def complete_text(prompt: str, config: LLMBackendConfig) -> str:
             temperature=config.temperature,
             max_tokens=config.max_tokens,
         )
+        _record_openai_snapshot(config.model_id or "gpt-4o-mini", getattr(resp, "model", None))
         return (resp.choices[0].message.content or "").strip()
 
     if backend == "hf_local":
