@@ -212,7 +212,8 @@ def generate_llm_paraphrases(
     model_name: str = "llama-3.1-8b",
     num_variations: int = 6,
     cache_dir: Optional[Path] = None,
-    timeout: int = 60
+    timeout: int = 60,
+    max_retries: int = 0,
 ) -> List[str]:
     """
     LLM을 사용하여 텍스트를 다양한 표현으로 재작성 (Polymorphic Paraphrasing)
@@ -255,36 +256,56 @@ def generate_llm_paraphrases(
     )
     
     try:
-        resp = requests.post(
-            f"{llm_api_base}/chat/completions",
-            json={
-                "model": model_name,
-                "messages": [
-                    {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": f"Original Text:\n{text}\n\nGenerate {num_variations} Paraphrases:"}
-                ],
-                "temperature": 0.8,
-                "max_tokens": 2500
-            },
-            timeout=timeout
-        )
-        
-        if resp.status_code != 200:
-            raise Exception(f"API returned status {resp.status_code}")
-        
-        result = resp.json()['choices'][0]['message']['content'].strip()
-        
-        # 파싱 로직
-        if "|||SEP|||" in result:
-            variations = result.split("|||SEP|||")
-        elif "###SEPARATOR###" in result:
-            variations = result.split("###SEPARATOR###")
-        else:
-            variations = re.split(r'\n\s*\n', result)
-        
-        variations = [v.strip() for v in variations if len(v.strip()) > 20]
-        
-        # 부족하면 채우기
+        def _call_llm_once() -> List[str]:
+            resp = requests.post(
+                f"{llm_api_base}/chat/completions",
+                json={
+                    "model": model_name,
+                    "messages": [
+                        {"role": "system", "content": system_prompt},
+                        {"role": "user", "content": f"Original Text:\n{text}\n\nGenerate {num_variations} Paraphrases:"}
+                    ],
+                    "temperature": 0.8,
+                    "max_tokens": 2500
+                },
+                timeout=timeout
+            )
+            if resp.status_code != 200:
+                raise Exception(f"API returned status {resp.status_code}")
+            result = resp.json()['choices'][0]['message']['content'].strip()
+            if "|||SEP|||" in result:
+                parts = result.split("|||SEP|||")
+            elif "###SEPARATOR###" in result:
+                parts = result.split("###SEPARATOR###")
+            else:
+                parts = re.split(r'\n\s*\n', result)
+            return [v.strip() for v in parts if len(v.strip()) > 20]
+
+        variations = _call_llm_once()
+
+        # Retry: if the generator returned fewer than num_variations distinct
+        # variations, call the LLM again up to max_retries times and merge
+        # unique outputs. Applied only when max_retries > 0 (opt-in for 2Wiki).
+        retry_count = 0
+        while len(set(variations)) < num_variations and retry_count < max_retries:
+            retry_count += 1
+            try:
+                new_vars = _call_llm_once()
+            except Exception as e:
+                print(f"[WARNING] retry {retry_count} failed: {e}")
+                break
+            seen = set(variations)
+            for v in new_vars:
+                if v not in seen:
+                    variations.append(v)
+                    seen.add(v)
+                if len(seen) >= num_variations:
+                    break
+        if retry_count > 0:
+            print(f"[retry] used {retry_count} extra LLM call(s); unique={len(set(variations))}/{num_variations}")
+
+        # 부족하면 채우기 (final fallback — preserves original behavior when
+        # retry is exhausted or disabled)
         while len(variations) < num_variations:
             if variations:
                 variations.append(variations[-1])
@@ -339,6 +360,11 @@ def main() -> None:
                     help="LLM API base URL")
     ap.add_argument("--llm_model", type=str, default="llama-3.1-8b",
                     help="LLM model name")
+    ap.add_argument("--llm_paraphrase_retries", type=int, default=0,
+                    help="If the paraphraser returns fewer than k_poison distinct variations, "
+                         "retry up to N additional LLM calls and merge unique outputs. "
+                         "Default 0 preserves original duplicate-fill behavior. "
+                         "Set to 3 for 2Wiki rebuild (see §8 Limitations).")
     ap.add_argument("--cache_dir", type=Path, default=None,
                     help="Cache directory for LLM paraphrases")
     args = ap.parse_args()
@@ -423,7 +449,8 @@ def main() -> None:
                         model_name=args.llm_model,
                         num_variations=args.k_poison,
                         cache_dir=args.cache_dir,
-                        timeout=60
+                        timeout=60,
+                        max_retries=args.llm_paraphrase_retries,
                     )
                     
                     # 3. 각 변형을 저장
