@@ -281,7 +281,7 @@ def faiss_search_batch(
 
 # ── Dataset loader (identical to colbert_qwen_runner) ───────────────────────
 
-def load_questions(hotpot_path: str, nq_path: str, wiki2_path: str = "") -> List[dict]:
+def load_questions(hotpot_path: str, nq_path: str, wiki2_path: str = "", trivia_path: str = "") -> List[dict]:
     questions = []
     if hotpot_path:
         with open(hotpot_path) as f:
@@ -307,6 +307,15 @@ def load_questions(hotpot_path: str, nq_path: str, wiki2_path: str = "") -> List
                     ans = [ans]
                 questions.append({"id": str(d["id"]), "q": d["question"],
                                    "a": ans, "ds": "wiki2"})
+    if trivia_path:
+        with open(trivia_path) as f:
+            for line in f:
+                d = json.loads(line)
+                ans = d.get("answer", [])
+                if isinstance(ans, str):
+                    ans = [ans]
+                questions.append({"id": str(d["id"]), "q": d["question"],
+                                   "a": ans, "ds": "trivia"})
     return questions
 
 
@@ -356,6 +365,7 @@ def main() -> None:
     parser.add_argument("--hotpot",              default="")
     parser.add_argument("--nq",                  default="")
     parser.add_argument("--wiki2",               default="")
+    parser.add_argument("--trivia",              default="")
     # Index paths
     parser.add_argument("--faiss_index",         required=True,
                         help="Directory with index.faiss / docid_map.jsonl / meta.json")
@@ -403,7 +413,7 @@ def main() -> None:
 
     # ── Load resources ──────────────────────────────────────────────────────
     manifest = load_manifest(args.manifest)
-    questions = load_questions(args.hotpot, args.nq, args.wiki2)
+    questions = load_questions(args.hotpot, args.nq, args.wiki2, args.trivia)
     questions = apply_manifest(questions, manifest)
     validate_selected_questions(questions, manifest)
     if args.max_questions > 0:
