@@ -1,0 +1,14 @@
+generator:
+  model: Meta-Llama-3.1-8B-Instruct
+  quant: Q8_0
+  temperature: 0.8
+  sybils_per_question: 6
+  tau_lex: 0.8
+  prompt_sha256: "37eb61bcdfab0ad50b5c9204b7f6598965ee623d465e689a99b5e90d7e12ca08"
+
+verifier:
+  model: Qwen2.5-72B-Instruct
+  quant: Q4_K_M
+  temperature: 0.0
+  theta_qc: 3
+  prompt_sha256: "0a4a02c92506d9929ca95917417abc35ac87271cd2f54de834d41d633268f2cb"
