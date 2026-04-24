@@ -1,0 +1,14 @@
+corpus:
+  name: wikipedia-dpr-100w
+  passages: 21015324
+  source: facebook/dpr-ctx_encoder-single-nq-base
+
+bm25_colbert:
+  first_stage: Lucene BM25 (top-1000)
+  reranker: colbert-ir/colbertv2.0 (dim 128, MaxSim)
+  final_k: 10
+
+e5_ce:
+  first_stage: intfloat/e5-large-v2 (FAISS IndexFlatIP, dim 1024, top-200)
+  reranker: cross-encoder/ms-marco-MiniLM-L6-v2 (22.7M params)
+  final_k: 10

@@ -1,0 +1,40 @@
+readers:
+  qwen25_7b:
+    model: bartowski/Qwen2.5-7B-Instruct-GGUF
+    quant: Q4_K_M
+    backend: llama_cpp_text
+    context: 8192
+    temperature: 0.0
+    max_tokens: 128
+
+  qwen25_72b:
+    model: bartowski/Qwen2.5-72B-Instruct-GGUF
+    quant: Q4_K_M
+    backend: llama_cpp_text
+    context: 8192
+    temperature: 0.0
+    max_tokens: 128
+
+  llama31_70b:
+    model: bartowski/Meta-Llama-3.1-70B-Instruct-GGUF
+    quant: Q4_K_M
+    backend: llama_cpp_text
+    context: 8192
+    temperature: 0.0
+    max_tokens: 128
+
+  gpt_oss_120b:
+    model: unsloth/gpt-oss-120b-GGUF
+    quant: Q4_K_M
+    backend: llama_cpp_chat
+    context: 131072
+    temperature: 0.0
+    max_tokens: 128
+    note: Harmony-format post-processing required
+
+  gpt_4o_mini:
+    model: gpt-4o-mini
+    observed_snapshot: gpt-4o-mini-2024-07-18
+    backend: openai_api
+    temperature: 0.0
+    max_tokens: 128
