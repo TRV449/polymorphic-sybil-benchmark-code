@@ -1,0 +1,26 @@
+idx,ds,id,gold_answer,auto_label
+0,hotpot,5ae7793c554299540e5a55c2,Krakatau,GENUINE
+1,nq,nq_1480,Lord's,GENUINE
+2,hotpot,5a77c09555429967ab105262,Antilocapra americana,GENUINE
+3,nq,nq_3517,a gesture,GENUINE
+4,nq,nq_768,13 March 624,GENUINE
+5,hotpot,5adff45c55429925eb1afb8c,"January 23, 1898",GENUINE
+6,hotpot,5ab2da99554299194fa93544,Argentina,GENUINE
+7,nq,nq_1935,Yuzuru Hanyu,GENUINE
+8,nq,nq_1901,Mesopotamia,GENUINE
+9,nq,nq_204,fourth,EXTRACTION_ARTIFACT
+10,hotpot,5adc459255429944faac24ad,Russell Humphreys,GENUINE
+11,hotpot,5ae648b955429929b0807b1d,Nobel Prize,EXTRACTION_ARTIFACT
+12,nq,nq_98,Slalom | Downhill | Super-G | Giant slalom | Slalom – (SC),GENUINE
+13,nq,nq_2045,San Francisco Giants | New York Yankees | Atlanta Braves | Cincinnati Reds,EXTRACTION_ARTIFACT
+14,nq,nq_1937,3000 BC | c. 3000 BC,GENUINE
+15,hotpot,5a74c6a655429974ef308c5d,"Gerard Marenghi (born January 24, 1920)",GENUINE
+16,hotpot,5ab53ad6554299488d4d9917,Shep Meyers,GENUINE
+17,hotpot,5adfcb5455429906c02daa48,Father Dougal McGuire,GENUINE
+18,hotpot,5ac0d83a554299294b219038,Summerlin,GENUINE
+19,hotpot,5aba725455429901930fa7cc,"22,500 acres",EXTRACTION_ARTIFACT
+20,nq,nq_731,endocrine regulation | support | production of blood cells | protection | storage of minerals | movement,EXTRACTION_ARTIFACT
+21,hotpot,5ae0c9dd5542993d6555ec69,yes,GENUINE
+22,hotpot,5a8303c255429954d2e2ec01,Chrysler K platform,GENUINE
+23,nq,nq_1440,Lynn | Swampscott | Beverly | Gloucester | Manchester | Essex | Middleton | Salem | Tewksbury,GENUINE
+24,hotpot,5ab480c45542990594ba9c36,prevent the German nuclear weapon project,GENUINE

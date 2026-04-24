@@ -1,0 +1,26 @@
+idx,ds,id,gold_answer,auto_label
+0,hotpot,5ae7793c554299540e5a55c2,Krakatau,GENUINE
+1,hotpot,5abe45b855429976d4830ad0,San Marino Grand Prix,GENUINE
+2,hotpot,5ac2a55b55429921a00ab018,the Mikoyan design bureau,GENUINE
+3,nq,nq_1099,Kathleen Erin Walsh,GENUINE
+4,nq,nq_1535,c. 1000 AD,GENUINE
+5,nq,nq_2199,Morocco | Berlin and Düsseldorf in Germany | Berlin | Hurghada in Egypt | Düsseldorf in Germany | Egypt | Germany,GENUINE
+6,hotpot,5ae12d5355429920d52342eb,"November 27, 2002.",GENUINE
+7,hotpot,5add65355542995b365fab27,stand-up,GENUINE
+8,hotpot,5a8babf05542996e8ac8899e,Daviesia,GENUINE
+9,hotpot,5a8a6b625542996c9b8d5ed9,Camber Sands,EXTRACTION_ARTIFACT
+10,hotpot,5abec8e45542997ec76fd364,the Troubles,GENUINE
+11,nq,nq_796,332 members | 332,GENUINE
+12,hotpot,5a7e4414554299495941995c,fifty-word,EXTRACTION_ARTIFACT
+13,hotpot,5a72ac8a5542992359bc3164,The Dundee Canal,GENUINE
+14,hotpot,5ab92f52554299131ca422a9,Dutch,GENUINE
+15,hotpot,5ab822ef55429916710eafff,musicals,GENUINE
+16,hotpot,5a8c72545542995e66a475f3,Grave Digger,GENUINE
+17,nq,nq_3517,a gesture,GENUINE
+18,nq,nq_2409,photoreceptor proteins that sense light | eyespots,GENUINE
+19,hotpot,5a778a165542995d831811a9,"Timothy Simon ""Tim"" Roth",GENUINE
+20,nq,nq_2932,"by June 15, 2018 | June 15, 2018",GENUINE
+21,hotpot,5ab3e4ee554299233954ffe1,John Nicholas Galleher,GENUINE
+22,hotpot,5a8aecff55429950cd6afbef,over 170,GENUINE
+23,nq,nq_2582,16.5 quadrillion BTUs | 30.4%,GENUINE
+24,hotpot,5ae17e4255429901ffe4aeae,"Massimiliano Antonio ""Max"" Cavalera",GENUINE

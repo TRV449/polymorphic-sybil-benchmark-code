@@ -1,0 +1,47 @@
+idx,ds,id,question,answer_eval,answer_raw_80,human_label,human_note
+0,hotpot,5ac0d83a554299294b219038,Randall Cunningham II was a multi-sport athlete at the high school located in what Nevada city?,Las Vegas,"Las Vegas
+Unknown. The context does not specify the exact city where Bishop Gorm",GENUINE,
+1,hotpot,5ae7ea695542994a481bbe17,The Worst Journey in the World is a memoir written by which English explorer of Antarctica?,Apsley Cherry-Garrard,"Apsley Cherry-Garrard
+Unknown. The context does not provide the exact date when ",GENUINE,
+2,hotpot,5ade908b55429975fa854f13,"After he was contracted by the team that is headquartered in Affalterbach, Baden-Württemberg, Germany, Dario Franchitti competed in what series?",IndyCar Series,"IndyCar Series
+Unknown. The context does not mention Dario Franchitti being cont",GENUINE,
+3,nq,nq_741,when was the first orca put in captivity,1964,"1964
+Unknown. The context does not provide a specific date for the first orca be",GENUINE,
+4,nq,nq_901,what's the largest city park in the united states,"South Mountain Park in Phoenix, Arizona","South Mountain Park in Phoenix, Arizona
+Unknown. The context provided does not e",GENUINE,
+5,nq,nq_1963,when did bihar bifurcate from bengal and some parts of chota nagpur merged into bengal,1 April 1912,"1 April 1912
+Unknown. The context does not provide information about specific pa",GENUINE,
+6,hotpot,5a8f45385542997ba9cb320a,Dahlia and Aruncus are both examples of what type of plant catagorization?,perennial plants,"perennial plants
+Unknown. The context does not provide information about a speci",GENUINE,
+7,hotpot,5a7c3178554299683c1c62e1,"The Fast On-orbit Rapid Recording of Transient Events (FORTE) was co-developed and launched by this lab located a short distance northwest of Santa Fe, New Mexico that was involved with which nuclear ",Los Alamos National Laboratory,"Los Alamos National Laboratory
+Unknown. The context does not specify which lab w",GENUINE,
+8,hotpot,5ac3271e554299218029dbd3,What team did Kenny Brown manage following the departure of Dean Holdsworth?,Chelmsford City,"Chelmsford City
+Unknown. The context does not specify that Kenny Brown managed a",EXTRACTION_ARTIFACT,
+9,hotpot,5a904f6355429916514e746e,What is the Latin phrase that describes Pope Julius II's efforts to remove Pope Alexander VI's name from the records?,Execrabilis,"Execrabilis
+Unknown. The context does not provide a specific Latin phrase descri",GENUINE,
+10,hotpot,5ae5ffbb5542996de7b71ad4,"Michaël Llodra of France, called ""the best volleyer on tour"", defeated Juan Martín del Potro a professional of what nationality?",Argentine,"Argentine
+Unknown. The context does not provide information about Juan Martín de",GENUINE,
+11,hotpot,5ae4581e55429970de88d92f,"Which city is under Jining, Kaiyuan, Liaoning or Yanzhou District?",Yanzhou District,"Yanzhou District
+Unknown. The context does not provide information about which c",EXTRACTION_ARTIFACT,
+12,nq,nq_873,when did the vikings first sail and reach britain,789,"789
+Unknown. The context does not provide a specific year for the first Viking s",GENUINE,
+13,nq,nq_224,who won battle of the sexes tennis game,"Billie Jean King won the ""Battle of the Sexes"" tennis match against Bobby Riggs in 1973","Billie Jean King won the ""Battle of the Sexes"" tennis match against Bobby Riggs ",EXTRACTION_ARTIFACT,
+14,hotpot,5ac3ad7f5542995ef918c1de,The Aviation Hall of Fame and Museum of New Jersey is located at the airport in which New Jersey county?,Bergen County,"Bergen County
+Unknown. The context does not specify the county where the Aviatio",EXTRACTION_ARTIFACT,
+15,nq,nq_1830,where is salt mined in the united states,"There are also underground salt mines in the United Kingdom, such as in Cheshire","In the United States, salt is mined in several locations including western New Y",GENUINE,
+16,nq,nq_3395,who won the mens figure skating in 2018 olympics,Vincent Zhou,"Vincent Zhou
+Unknown. The context provided does not mention the winner of men's ",GENUINE,
+17,nq,nq_2955,what is don quixote's horse's name,"Rocinante Unknown Rocinante is Don Quixote's horse, but the name of the horse is not explicitly","Rocinante Unknown Rocinante is Don Quixote's horse, but the name of the horse is",EXTRACTION_ARTIFACT,
+18,nq,nq_827,who played cosette in les miserables on broadway,Rebecca Caine,"Rebecca Caine
+Unknown. The context does not specify which production or revival ",GENUINE,
+19,hotpot,5a728f3c5542992359bc30f4,"Which football club appeared in the 2015 FA Community Shield Cup, as well as, the 2014–15 Premier League championship?",Arsenal,"Arsenal
+Unknown. The context does not provide information about which club appea",GENUINE,
+20,nq,nq_2885,what nfl player has the most nfl rings,Charles Haley and Tom Brady,"Charles Haley and Tom Brady
+Unknown. The context does not provide information ab",EXTRACTION_ARTIFACT,
+21,hotpot,5a8e17ce554299653c1aa169,Where in Greek mythology was the father of Benthesikyme venerated as a chief deity?,Pylos,"Pylos
+Unknown. The context does not provide information about where Poseidon was",EXTRACTION_ARTIFACT,
+22,hotpot,5ac3a364554299391541385d,What is the origin of the National Space Olympiad and Kalpana Chawla ?,India,"India
+Unknown. The context does not provide information about the origin of Kalp",EXTRACTION_ARTIFACT,
+23,nq,nq_1899,who was the captain of the mayflower when it took the pilgrims to the new world,Unknown Unknown is the answer as the context directly states this information,Christopher Jones (Mayflower captain) Unknown Christopher Jones (Mayflower capta,EXTRACTION_ARTIFACT,
+24,hotpot,5ac4ec9955429924173fb4da,What genre was the movie that Austin Nichols was in with Kirsten Dunst?,Drama,"Drama
+Unknown. The context does not specify the genre of the movie that Austin N",GENUINE,

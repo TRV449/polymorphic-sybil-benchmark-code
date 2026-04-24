@@ -1,0 +1,26 @@
+idx,ds,id,gold_answer,auto_label
+0,hotpot,5adfef32554299603e4183ca,Coronation Street,EXTRACTION_ARTIFACT
+1,nq,nq_1191,"March 18, 2018",GENUINE
+2,hotpot,5a8026a05542992e7d278df8,3 December,GENUINE
+3,hotpot,5a728f745542991f9a20c4e6,Elle,GENUINE
+4,hotpot,5a77863555429949eeb29ec6,Richard Dafydd Vivian Llewellyn,GENUINE
+5,nq,nq_1719,October 2012,EXTRACTION_ARTIFACT
+6,hotpot,5a8c5eca554299240d9c213d,"three Macy's stores, Sears, Nordstrom, Bloomingdale's, and Saks Fifth Avenue",GENUINE
+7,nq,nq_600,Ford,GENUINE
+8,hotpot,5a7f251155429934daa2fcf2,Emancipation Proclamation,GENUINE
+9,nq,nq_3150,Australia,GENUINE
+10,nq,nq_573,Article Two,EXTRACTION_ARTIFACT
+11,hotpot,5ab8effd5542991b5579f062,"Valeri Vladimirovich ""Val"" Bure",GENUINE
+12,hotpot,5a7e283655429965cec5eaab,8-track,GENUINE
+13,nq,nq_1092,Moscazzano,EXTRACTION_ARTIFACT
+14,hotpot,5a8f541e5542992414482a53,Connie Smith,GENUINE
+15,hotpot,5a710d155542994082a3e520,Erich Schmidt-Leichner,GENUINE
+16,hotpot,5ac24cc45542996366519963,documentary film,GENUINE
+17,nq,nq_2513,Danish | Norwegian,GENUINE
+18,nq,nq_2644,Maginot Line | The Maginot Line,GENUINE
+19,hotpot,5ae12a4b55429920d52342df,Puli Alam,GENUINE
+20,hotpot,5ae644c55542992663a4f27e,1919,GENUINE
+21,hotpot,5a8ac5595542992d82986f77,by Larry Eustachy,GENUINE
+22,hotpot,5a77f2af5542995d83181333,Gregori Aleksandrovich Margulis,GENUINE
+23,nq,nq_2040,"January 11, 2014 | 2014",GENUINE
+24,hotpot,5adc02905542994650320c50,George II,GENUINE

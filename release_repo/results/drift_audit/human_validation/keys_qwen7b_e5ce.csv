@@ -1,0 +1,26 @@
+idx,ds,id,gold_answer,auto_label
+0,hotpot,5ac0d83a554299294b219038,Summerlin,GENUINE
+1,hotpot,5ae7ea695542994a481bbe17,Apsley George Benet Cherry-Garrard,GENUINE
+2,hotpot,5ade908b55429975fa854f13,DTM,GENUINE
+3,nq,nq_741,in the 1960s | November 1961,GENUINE
+4,nq,nq_901,Franklin Mountains State Park,GENUINE
+5,nq,nq_1963,1912,GENUINE
+6,hotpot,5a8f45385542997ba9cb320a,genus,GENUINE
+7,hotpot,5a7c3178554299683c1c62e1,Manhattan Project,GENUINE
+8,hotpot,5ac3271e554299218029dbd3,Chelmsford,EXTRACTION_ARTIFACT
+9,hotpot,5a904f6355429916514e746e,Damnatio memoriae,GENUINE
+10,hotpot,5ae5ffbb5542996de7b71ad4,Argentinian,EXTRACTION_ARTIFACT
+11,hotpot,5ae4581e55429970de88d92f,Yanzhou,GENUINE
+12,nq,nq_873,6 January 793 | 786–802,GENUINE
+13,nq,nq_224,Billie Jean King,EXTRACTION_ARTIFACT
+14,hotpot,5ac3ad7f5542995ef918c1de,Bergen,GENUINE
+15,nq,nq_1830,"Avery Island, Louisiana | Houston, Texas | Avery Island | Saltville, Virginia | Central New York | Hutchinson, Kansas | Syracuse | Grand Saline in East Texas | Detroit, Michigan | Western New York",GENUINE
+16,nq,nq_3395,Yuzuru Hanyu | Javier Fernández | Shoma Uno,GENUINE
+17,nq,nq_2955,Rocinante,EXTRACTION_ARTIFACT
+18,nq,nq_827,Samantha Hill | Judy Kuhn | Ali Ewoldt,GENUINE
+19,hotpot,5a728f3c5542992359bc30f4,Chelsea,GENUINE
+20,nq,nq_2885,"Charles Haley | Neal Dahlen | Bill Belichick | Tom Brady | ""Mean Joe"" Greene",GENUINE
+21,hotpot,5a8e17ce554299653c1aa169,Pylos and Thebes,GENUINE
+22,hotpot,5ac3a364554299391541385d,Indian,GENUINE
+23,nq,nq_1899,Captain Jones | Master Christopher Jones | Christopher Jones,EXTRACTION_ARTIFACT
+24,hotpot,5ac4ec9955429924173fb4da,romantic comedy,GENUINE

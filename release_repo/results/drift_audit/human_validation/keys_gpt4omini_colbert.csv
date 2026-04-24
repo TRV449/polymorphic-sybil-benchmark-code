@@ -1,0 +1,26 @@
+idx,ds,id,gold_answer,auto_label
+0,nq,nq_3353,B cells | lymph,GENUINE
+1,hotpot,5abdb4a755429965af743df0,Czech Republic,GENUINE
+2,nq,nq_2183,consistency,GENUINE
+3,hotpot,5ac531ea5542994611c8b419,50 Greatest Players in National Basketball Association History,GENUINE
+4,hotpot,5abae3205542996cc5e49edc,Man Booker Prize for Fiction,GENUINE
+5,hotpot,5abab36455429955dce3eed1,"The song also features rap parts from Darryl, RB Djan and Ryan Babel.",GENUINE
+6,nq,nq_423,Virginia,GENUINE
+7,hotpot,5a77767a55429967ab10519b,Dr. Ruth Westheimer,GENUINE
+8,nq,nq_815,1908 | In 1908 | 1940,GENUINE
+9,hotpot,5a8a77fd55429930ff3c0de3,Wayne Rooney,GENUINE
+10,nq,nq_1883,in Super Bowl LII,GENUINE
+11,nq,nq_3354,Florida,GENUINE
+12,hotpot,5a8eabf755429917b4a5bdaa,Bollywood playback singer,GENUINE
+13,hotpot,5a7730f255429972597f148c,A Scholar Under Siege,GENUINE
+14,hotpot,5a73a7c755429978a71e9068,Donna Paige Helmintoller,GENUINE
+15,nq,nq_1732,"Oslo, Norway",GENUINE
+16,nq,nq_2320,Miller Lite,GENUINE
+17,nq,nq_175,Richard Gere | David Keith | Louis Gossett Jr. | Debra Winger | Phillip J. Salmon,GENUINE
+18,nq,nq_1703,"March 11, 2018",GENUINE
+19,hotpot,5ae75a4c5542997b22f6a6f1,The Itchy & Scratchy Show,GENUINE
+20,hotpot,5ae07b0155429945ae95935d,Paul Thomas Mann,GENUINE
+21,nq,nq_1206,England | English,GENUINE
+22,nq,nq_674,Thaddeus Rowe Luckinbill,GENUINE
+23,nq,nq_355,1960,EXTRACTION_ARTIFACT
+24,hotpot,5ac3271e554299218029dbd3,Chelmsford,GENUINE

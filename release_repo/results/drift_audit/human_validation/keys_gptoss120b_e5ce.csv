@@ -1,0 +1,17 @@
+idx,ds,id,gold_answer,auto_label
+0,hotpot,5ac2b8085542990b17b1546b,2015 Baylor Bears football team,GENUINE
+1,hotpot,5a8ae0ae55429950cd6afbc2,AeroflotRussian Airlines,GENUINE
+2,hotpot,5a8f84505542992414482aef,singer and songwriter,GENUINE
+3,hotpot,5a77846f5542995d83181187,Duke Cunningham,EXTRACTION_ARTIFACT
+4,hotpot,5a73b0975542992d56e7e387,Burnley,EXTRACTION_ARTIFACT
+5,hotpot,5ae75eb15542995703ce8bf8,"Julius Caesar ""J. C."" Watts Jr.",EXTRACTION_ARTIFACT
+6,hotpot,5ab1e97f554299340b525427,seven-minute episodes.,GENUINE
+7,hotpot,5a7fd6fc5542995d8a8ddf31,Charles A. Agemian,GENUINE
+8,hotpot,5adf21bc5542993344016bf4,Savin Yeatman-Eiffel,GENUINE
+9,hotpot,5a89875655429938390d4047,martial artist,GENUINE
+10,hotpot,5abbfbcf55429965836003cf,National Mall,GENUINE
+11,hotpot,5ab9ddaa5542994dbf019873,Lord Gort,GENUINE
+12,hotpot,5aba5dfd55429955dce3edf0,Prudential Center,EXTRACTION_ARTIFACT
+13,hotpot,5a79102a554299148911f9da,"University of Nevada, Las Vegas",GENUINE
+14,hotpot,5ab47d765542991751b4d78f,architect Michael Graves,GENUINE
+15,hotpot,5a7f6eab5542992097ad2f66,West Point Iron and Cannon Foundry,GENUINE
